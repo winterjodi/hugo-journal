@@ -1,6 +1,9 @@
 {{ partial "top.html" . }}
 
-  <article class="posts">
+<article class="posts">
+    <header class="terms-header">
+        <h1 class="terms-title">{{ .Title }}</h1>
+    </header>
 
     {{ range site.RegularPages.GroupByDate "2006" -}}
     <section>

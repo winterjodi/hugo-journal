@@ -35,7 +35,10 @@
     {{ if .IsHome -}}
     <header class="site-header">
       <h1>{{ .Site.Title }}</h1>
-      <p>{{ .Site.Params.tagline }}</p>
+      
+      <span class="site-tagline">{{ .Site.Params.tagline }}</span>
+      <a href="/tags/">TAGS</a>
+      <a href="{{ "index.xml" | relURL }}">RSS</a>
     </header>
     {{- else -}}
     <nav class="site-nav">

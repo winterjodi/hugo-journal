@@ -163,6 +163,14 @@ h6 {
   .site-nav h1 {
     margin-bottom: .5rem; }
 
+.site-header a {
+  margin-left: .25rem;
+}
+
+.site-tagline {
+  margin-right: 1rem;
+}
+
 .site-nav a::before {
   content: '\2190';
   margin-right: .25rem; }
@@ -185,8 +193,7 @@ h6 {
     .posts li {
       display: flex;
       flex-direction: row; } }
-.posts time {
-  display: block; }
+
   @media screen and (min-width: var(--breakpoint-sm)) {
     .posts time {
       flex: 0 0 5rem; } }

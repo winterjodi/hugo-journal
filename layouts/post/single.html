@@ -8,6 +8,17 @@
 
     {{ .Content }}
 
+    {{ $taxonomy := "tags" }}
+      {{ with .GetTerms $taxonomy }}
+        <p class="post-tags">
+          {{ range $k, $_ := . -}}
+            {{ if $k }}, {{ end }}
+            <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+          {{- end }}
+        </p>
+      {{ end }}
+
+
   </article>
 
 {{ partial "bottom.html" . }}
