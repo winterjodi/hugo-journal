@@ -22,6 +22,10 @@
   <meta name="description" content="{{ .Description }}">
   {{- end }}
 
+  {{ with .Site.Params.mastodon -}}
+  <link rel="me" href="{{ . }}">
+  {{- end }}
+
   <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/highlight.css" | relURL }}">
   <link rel="stylesheet" href="{{ "css/journal.css" | relURL }}">
