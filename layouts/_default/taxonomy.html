@@ -5,7 +5,7 @@
         <h1 class="terms-title">{{ .Title }}</h1>
     </header>
 
-    {{ range site.RegularPages.GroupByDate "2006" -}}
+    {{ range .Pages.GroupByDate "2006" -}}
     <section>
       <ol>
         {{ range .Pages -}}
