@@ -6,17 +6,21 @@
       <time class="post-date" datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "02 Jan 2006" }}</time>
     </header>
 
+    {{ with .Params.rating }}
+      {{ partial "rating.html" . }}
+    {{ end }}
+
     {{ .Content }}
 
     {{ $taxonomy := "tags" }}
-      {{ with .GetTerms $taxonomy }}
-        <p class="post-tags">
-          {{ range $k, $_ := . -}}
-            {{ if $k }}, {{ end }}
-            <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
-          {{- end }}
-        </p>
-      {{ end }}
+    {{ with .GetTerms $taxonomy }}
+      <p class="post-tags">
+        {{ range $k, $_ := . -}}
+          {{ if $k }}, {{ end }}
+          <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+        {{- end }}
+      </p>
+    {{ end }}
 
 
   </article>

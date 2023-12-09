@@ -1,0 +1,11 @@
+<div class="post-rating">
+  {{ $rating := . }}
+  <span>Rating:</span>
+  {{ range seq 5 -}}
+    {{ if lt . (add (int $rating) 1) }} 
+      <span class="rating-star full-star">★</span>
+    {{ else }}
+      <span class="rating-star empty-star">☆</span>
+    {{ end }}
+  {{- end }}
+</div>

@@ -210,5 +210,9 @@ h6 {
   margin: var(--margin);
   text-align: right; }
 
+.post .post-rating {
+  margin-bottom: 1rem;
+}
+
 .hljs {
   font-size: .875rem; }
