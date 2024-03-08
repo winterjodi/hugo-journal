@@ -5,18 +5,18 @@
         <h1 class="terms-title">{{ .Title }}</h1>
     </header>
 
-    {{ range .Pages.GroupByDate "2006" -}}
     <section>
       <ol>
-        {{ range .Pages -}}
-        <li>
-          <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02 2006"}}</time>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </li>
-        {{- end }}
+        {{ range .Pages.GroupByDate "2006" -}}
+          {{ range .Pages -}}
+          <li>
+            <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02 2006"}}</time>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </li>
+          {{- end }}
+        {{ end }}
       </ol>
     </section>
-    {{ end }}
 
   </article>
 

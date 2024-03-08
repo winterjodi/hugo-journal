@@ -2,18 +2,18 @@
 
   <article class="posts">
 
-    {{ range site.RegularPages.GroupByDate "2006" -}}
-    <section>
-      <ol>
+  <section>
+    <ol>
+      {{ range site.RegularPages.GroupByDate "2006" -}}
         {{ range .Pages -}}
         <li>
           <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02 2006"}}</time>
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </li>
         {{- end }}
-      </ol>
-    </section>
-    {{ end }}
+      {{ end }}
+    </ol>
+  </section>
 
   </article>
 
